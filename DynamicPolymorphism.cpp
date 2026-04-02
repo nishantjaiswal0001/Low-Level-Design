@@ -4,7 +4,7 @@
 using namespace std;
 
 /*
-Dynamic Polymorphism in real life says that 2 Objects coming from same
+Dynamic Polymorphism in real life says that 2 Objects coming from same.
 family will respond to same stimulus differently. Like in real world Manual
 car and Electric car will respond to accelerate() differently.
 
