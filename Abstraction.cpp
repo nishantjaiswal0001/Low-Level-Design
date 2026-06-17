@@ -10,7 +10,6 @@ Abstract class -->
 3. Since this is an abstract class we cannot directly create Objects of this class. 
 4. We need to Inherit it first and then that child class will have the responsibility to 
 provide implementation details of all the abstract (virtual) methods in the class.
-
 5. In our real world example of Car, imagine you sitting in the car and able to operate
 the car (startEngine, accelerate, brake, turn) just by pressing or moving some
 pedals/buttons/ steer the wheel etc. You dont need to know how these things work, and
@@ -28,7 +27,7 @@ public:
 };
 
 /*
-1. This is a Concrete class (A class that provide implementation details of an abstract class).
+1. This is a Concrete class (A class that provides implementation details of an abstract class).
 Now anyone can make an Object of 'SportsCar' and can assign it to 'Car' (Parent class) pointer 
 (See main method for this)
 
@@ -81,6 +80,10 @@ public:
     }
 
     void brake() {
+        if(!isEngineOn){
+            cout<<brand<<" "<<model<<" :Engine is already off.";
+            return;
+        }
         currentSpeed -= 20;
         if (currentSpeed < 0) currentSpeed = 0;
         cout << brand << " " << model << " : Braking! Speed is now " << currentSpeed << " km/h" << endl;
