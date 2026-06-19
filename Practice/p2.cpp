@@ -36,7 +36,7 @@ public:
     void sounds(){  //will give answer Animal makes sound as sounds!=sound
         cout<<"Dog Barks"<<endl;
     }
-    void sound() override{
+    void sound() {
         cout<<"Dog Barks"<<endl;
     }
 };
@@ -48,12 +48,35 @@ public:
     }
 };
 
+class A{
+public:
+    A(){
+        cout<<"A call hua\n";
+    }
+    void method1(){
+        cout<<"Method1 is approached\n";
+    }
+};
+
+class B: public A{
+public:
+    B(){
+        cout<<"B call hua\n";
+    }
+    void method2(){
+        cout<<"Method2 is approached\n";
+    }
+};
+
 int main(){
   Animal* a;
   Dog d;
   a=&d;
   a->sound();
-  Cat c;
-  a=&c;
-  a->sound();
+//   Cat c;
+//   a=&c;
+//   a->sound();
+//    B* b=new B();
+//    b->method1();
+//    b->method2();
 }
