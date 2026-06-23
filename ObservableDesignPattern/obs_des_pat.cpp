@@ -33,7 +33,7 @@ public:
 
     // Add a subscriber (avoid duplicates)
     void subscribe(ISubscriber* subscriber) override {
-        if (find(subscribers.begin(), subscribers.end(), subscriber) == subscribers.end()) {
+        if (find(subscribers.begin(), subscribers.end(), subscriber) == subscribers.end()) {  //not found
             subscribers.push_back(subscriber);
         }
     }
@@ -90,17 +90,17 @@ int main() {
     Subscriber* subs1 = new Subscriber("Ram", channel);
     Subscriber* subs2 = new Subscriber("Shyam", channel);
 
-    // Varun and Tarun subscribe to CoderArmy
+    // Ram and Shyam subscribe to CoderArmy
     channel->subscribe(subs1);
     channel->subscribe(subs2);
 
-    // Upload a video: both Varun and Tarun are notified
+    // Upload a video: both Ram and Shyam are notified
     channel->uploadVideo("Observer Pattern Tutorial");
 
-    // Varun unsubscribes; Tarun remains subscribed
+    // Ram unsubscribes; Shyam remains subscribed
     channel->unsubscribe(subs1);
 
-    // Upload another video: only Tarun is notified
+    // Upload another video: only Shyam is notified
     channel->uploadVideo("Decorator Pattern Tutorial");
 
     return 0;
