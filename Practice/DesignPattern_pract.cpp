@@ -82,11 +82,32 @@ public:
 };
 
 
+//Singleton
+class Singleton{
+private:
+   static Singleton* instance;
+   Singleton(){
+      cout<<"Singleton Constructor call hua\n";
+   }
+public:
+   static Singleton* getinstance(){
+      if(instance==nullptr){
+         instance=new Singleton();
+      }
+      return instance;
+   }
+};
+
+Singleton* Singleton::instance=nullptr;
+
 int main(){
-   Vehicle* v1= new Sportsvehicle();
-   Vehicle* v2= new Passengersvehicle();
-   Vehicle* v3= new offroadvehicle();
-   v1->drive();
-   v2->drive();
-   v3->drive();
+   // Vehicle* v1= new Sportsvehicle();
+   // Vehicle* v2= new Passengersvehicle();
+   // Vehicle* v3= new offroadvehicle();
+   // v1->drive();
+   // v2->drive();
+   // v3->drive();
+   Singleton *s1=Singleton::getinstance();
+   Singleton *s2=Singleton::getinstance();
+   cout<<(s1==s2);
 }
